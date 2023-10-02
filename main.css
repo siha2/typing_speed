@@ -106,8 +106,14 @@ body {
   padding: 15px;
 }
 .finish .good {
-  color: var(--main-color);
+  background-color: #2aa397;;
 }
 .finish .bad {
-  color: red;
+  background-color: #c34343;
+}
+.finish span {
+  color: #fff;
+  padding: 10px;
+  width: 80%;
+  display: inline-block;
 }

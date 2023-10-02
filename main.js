@@ -97,6 +97,9 @@ function startPlay() {
       if (theWord.innerHTML.toLowerCase() === input.value.toLowerCase()) {
         input.value = '';
         scoreGot.innerHTML++;
+        if (words.length === 1) {
+          upcomingWords.remove();
+        }
         if (words.length > 0) {
           genWords();
         } else {
@@ -105,7 +108,8 @@ function startPlay() {
           let spanText = document.createTextNode("Congratz");
           span.append(spanText);
           finishMessage.append(span);
-          upcomingWords.remove();
+          input.remove();
+          theWord.remove();
         }
       } else {
         let span = document.createElement("span");
@@ -113,6 +117,9 @@ function startPlay() {
         let spanText = document.createTextNode("Game Over");
         span.append(spanText);
         finishMessage.append(span);
+        upcomingWords.remove();
+        input.remove();
+        theWord.remove();
       }
     }
   }, 1000);
